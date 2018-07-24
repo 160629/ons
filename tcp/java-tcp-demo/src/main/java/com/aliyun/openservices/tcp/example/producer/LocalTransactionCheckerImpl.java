@@ -9,6 +9,7 @@ import com.aliyun.openservices.ons.api.transaction.TransactionStatus;
  */
 public class LocalTransactionCheckerImpl implements LocalTransactionChecker {
 
+	@Override
     /**
      * 本地事务Checker,详见: https://help.aliyun.com/document_detail/29548.html?spm=5176.doc35104.6.133.pJkthu
      */

@@ -38,7 +38,7 @@ public class SimpleMQProducer {
         System.out.println("Producer Started");
 
         for (int i = 0; i < 10; i++) {
-            Message message = new Message(MqConfig.TOPIC, MqConfig.TAG+"..."+i, "mq send transaction message test".getBytes());
+            Message message = new Message(MqConfig.TOPIC, MqConfig.TAG+"...简单二"+i, "mq send transaction message test".getBytes());
             SendResult sendResult = producer.send(message);
             if (sendResult != null) {
                 System.out.println(new Date() + " Send mq message success! Topic is:" + MqConfig.TOPIC + " msgId is: " + sendResult.getMessageId());

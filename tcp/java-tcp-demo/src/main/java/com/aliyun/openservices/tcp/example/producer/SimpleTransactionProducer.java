@@ -29,7 +29,8 @@ public class SimpleTransactionProducer {
 
         for (int i = 0; i < 10; i++) {
         	Message message = new Message(MqConfig.TOPIC, MqConfig.TAG+"..."+i, "mq send transaction message test".getBytes());
-            SendResult sendResult = transactionProducer.send(message, new LocalTransactionExecuter() {
+            @SuppressWarnings("unused")
+			SendResult sendResult = transactionProducer.send(message, new LocalTransactionExecuter() {
                 public TransactionStatus execute(Message msg, Object arg) {
                     System.out.println("执行本地事务, 并根据本地事务的状态提交TransactionStatus.");
                     return TransactionStatus.CommitTransaction;
